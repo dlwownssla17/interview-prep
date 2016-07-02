@@ -1,3 +1,5 @@
 *.DS_Store
 ctci/java/.idea
 ctci/python/.idea
+ctci/java/.out
+ctci/python/.out
