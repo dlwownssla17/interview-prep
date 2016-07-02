@@ -1,0 +1,3 @@
+[submodule "ctci/solutions/CtCI-6th-Edition"]
+	path = ctci/solutions/CtCI-6th-Edition
+	url = git@github.com:careercup/CtCI-6th-Edition.git
