@@ -8,6 +8,9 @@ import java.util.HashSet;
 public class QuestionA {
     /* assume ASCII */
     public static boolean isUnique(String s) {
+        if (s.length() > 128)
+            return false;
+
         boolean[] exists = new boolean[128];
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);
