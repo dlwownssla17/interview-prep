@@ -11,7 +11,7 @@ public class QuestionB {
 
         int exists = 0;
         for (int i = 0; i < s.length(); i++) {
-            int bitMask = 1 << s.charAt(i);
+            int bitMask = 1 << (s.charAt(i) - 'a');
             if ((exists & bitMask) > 0)
                 return false;
             else
