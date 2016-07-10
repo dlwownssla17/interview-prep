@@ -14,8 +14,7 @@ public class QuestionB {
             int bitMask = 1 << (s.charAt(i) - 'a');
             if ((exists & bitMask) > 0)
                 return false;
-            else
-                exists |= bitMask;
+            exists |= bitMask;
         }
         return true;
     }

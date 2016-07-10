@@ -16,8 +16,7 @@ public class QuestionA {
             char c = s.charAt(i);
             if (exists[c])
                 return false;
-            else
-                exists[c] = true;
+            exists[c] = true;
         }
         return true;
     }
@@ -29,8 +28,7 @@ public class QuestionA {
             char c = s.charAt(i);
             if (exists.contains(c))
                 return false;
-            else
-                exists.add(c);
+            exists.add(c);
         }
         return true;
     }
