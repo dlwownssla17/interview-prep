@@ -1,0 +1,1 @@
+Only one solution written. *(to be updated)*
