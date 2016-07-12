@@ -22,7 +22,7 @@ class Tester(unittest.TestCase):
         rotate(matrix_d)
         self.assertEquals(matrix_d, rotated_matrix_d)
         matrix_e = self.counting_matrix(6)
-        rotated_matrix_e = [[30, 24, 18, 12, 6, 0], [31, 25, 19, 13, 7, 1], [32, 26, 20, 14, 8, 2], \
+        rotated_matrix_e = [[30, 24, 18, 12, 6, 0], [31, 25, 19, 13, 7, 1], [32, 26, 20, 14, 8, 2],
             [33, 27, 21, 15, 9, 3], [34, 28, 22, 16, 10, 4], [35, 29, 23, 17, 11, 5]]
         rotate(matrix_e)
         self.assertEquals(matrix_e, rotated_matrix_e)
