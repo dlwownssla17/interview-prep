@@ -1,36 +1,58 @@
 # in place using first row and first column to mark presence of zeros
 def set_zeros(matrix):
-    first_row_zeros = mark_zeros(matrix)
-    if len(matrix) > 0:
-        set_column_zeros(matrix)
-    set_row_zeros(matrix, first_row_zeros)
+    if len(matrix) == 0 or len(matrix[0]) == 0:
+        return
+
+    first_row = first_row_has_zeros(matrix)
+    first_column = first_column_has_zeros(matrix)
+
+    mark_zeros(matrix)
+
+    for j in xrange(1, len(matrix[0])):
+        if matrix[0][j] == 0:
+            set_column_zeros(matrix, j)
+    for i in xrange(1, len(matrix)):
+        if matrix[i][0] == 0:
+            set_row_zeros(matrix, i)
+
+    if first_row:
+        set_row_zeros(matrix, 0)
+    if first_column:
+        set_column_zeros(matrix, 0)
 
 
-# mark presence of zeros
-def mark_zeros(matrix):
-    first_row_zeros = False
-    for i in xrange(len(matrix)):
-        for j in xrange(len(matrix[0])):
-            if matrix[i][j] == 0:
-                if i != 0:
-                    matrix[i][0] = 0
-                else:
-                    first_row_zeros = True
-                matrix[0][j] = 0
-    return first_row_zeros
-
-
-# set marked columns as zeros
-def set_column_zeros(matrix):
+# check if first row has zeros
+def first_row_has_zeros(matrix):
     for j in xrange(len(matrix[0])):
         if matrix[0][j] == 0:
-            for i in xrange(len(matrix)):
-                matrix[i][j] = 0
+            return True
+    return False
 
 
-# set marked rows as zeros
-def set_row_zeros(matrix, first_row_zeros):
+# check if first column has zeros
+def first_column_has_zeros(matrix):
     for i in xrange(len(matrix)):
-        if (i == 0 and first_row_zeros) or matrix[i][0] == 0:
-            for j in xrange(len(matrix[0])):
-                matrix[i][j] = 0
+        if matrix[i][0] == 0:
+            return True
+    return False
+
+
+# mark zeros in first row and first column
+def mark_zeros(matrix):
+    for i in xrange(1, len(matrix)):
+        for j in xrange(1, len(matrix[i])):
+            if matrix[i][j] == 0:
+                matrix[0][j] = 0
+                matrix[i][0] = 0
+
+
+# set given row to zeros
+def set_row_zeros(matrix, row):
+    for j in xrange(len(matrix[0])):
+        matrix[row][j] = 0
+
+
+# set given column to zeros
+def set_column_zeros(matrix, column):
+    for i in xrange(len(matrix)):
+        matrix[i][column] = 0

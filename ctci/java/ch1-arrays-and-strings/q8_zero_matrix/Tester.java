@@ -32,5 +32,9 @@ public class Tester {
                 {1, 0, 1, 0, 1}, {1, 0, 1, 0, 1}, {0, 0, 0, 0, 0}};
         setZeros(matrixE);
         assertEquals(matrixE, zeroedMatrixE);
+        int[][] matrixJoel = {{0,0,1,1,1}, {1,1,2,4,100}, {0,2, 3, 4, 1}, {4,3,4,3,0}};
+        int[][] zeroedMatrixJoel = {{0,0,0,0,0},{0,0,2,4,0},{0,0,0,0,0},{0,0,0,0,0}};
+        setZeros(matrixJoel);
+        assertEquals(matrixJoel, zeroedMatrixJoel);
     }
 }

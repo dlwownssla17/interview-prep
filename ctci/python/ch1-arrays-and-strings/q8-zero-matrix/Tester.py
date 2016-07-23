@@ -27,6 +27,10 @@ class Tester(unittest.TestCase):
                            [1, 0, 1, 0, 1], [1, 0, 1, 0, 1], [0, 0, 0, 0, 0]]
         set_zeros(matrix_e)
         self.assertEquals(matrix_e, zeroed_matrix_e)
+        matrix_joel = [[0, 0, 1, 1, 1], [1, 1, 2, 4, 100], [0, 2, 3, 4, 1], [4, 3, 4, 3, 0]]
+        zeroed_matrix_joel = [[0, 0, 0, 0, 0], [0, 0, 2, 4, 0], [0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+        set_zeros(matrix_joel)
+        self.assertEquals(matrix_joel, zeroed_matrix_joel)
 
 if __name__ == "__main__":
     unittest.main()
