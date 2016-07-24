@@ -26,6 +26,7 @@ public class Tester {
         e.next = f;
         f.next = g;
         g.next = h;
+
         removeDups(a);
 
         int[] arr = new int[4];

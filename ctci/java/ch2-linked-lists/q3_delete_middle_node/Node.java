@@ -1,4 +1,4 @@
-package q2_return_kth_to_last;
+package q3_delete_middle_node;
 
 /**
  * Created by jjlee on 7/23/16.
