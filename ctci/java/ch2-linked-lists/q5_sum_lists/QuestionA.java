@@ -9,6 +9,7 @@ public class QuestionA {
         return sumListsHelper(a, b, false);
     }
 
+    /* helper function (recursive) */
     private static Node<Integer> sumListsHelper(Node<Integer> a, Node<Integer> b, boolean carriage) {
         if (a == null && b == null) return carriage ? new Node(1) : null;
 

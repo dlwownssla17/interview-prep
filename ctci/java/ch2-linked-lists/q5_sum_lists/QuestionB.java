@@ -20,11 +20,13 @@ public class QuestionB {
         return ps.sum;
     }
 
+    /* gets length of given list */
     private static int getLength(Node<Integer> n) {
         if (n == null) return 0;
         return 1 + getLength(n.next);
     }
 
+    /* pads given list with 0s */
     private static Node<Integer> padList(Node<Integer> n, int pad) {
         if (pad <= 0) return n;
         Node<Integer> newNode = new Node(0);
@@ -32,6 +34,7 @@ public class QuestionB {
         return newNode;
     }
 
+    /* helper function (recursive) that assumes same lengths */
     private static PartialSum sumListsForwardOrderSameLengths(Node<Integer> a, Node<Integer> b) {
         PartialSum ps = new PartialSum();
         if (a == null && b == null) return ps;
