@@ -22,19 +22,15 @@ public class Question {
 
             if (aPtr != bPtr) return null;
 
-            if (aLength <= bLength) {
-                for (int i = 0; i < bLength - aLength; i++) {
-                    b = b.next;
-                }
-            } else {
-                for (int i = 0; i < aLength - bLength; i++) {
-                    a = a.next;
-                }
+            Node shorter = aLength <= bLength ? a : b;
+            Node longer = aLength <= bLength ? b : a;
+            for (int i = 0; i < Math.abs(bLength - aLength); i++) {
+                longer = longer.next;
             }
-            while (a != null && b != null) {
-                if (a == b) return a;
-                a = a.next;
-                b = b.next;
+            while (shorter != null && longer != null) {
+                if (shorter == longer) return longer;
+                shorter = shorter.next;
+                longer = longer.next;
             }
         }
         return null;
