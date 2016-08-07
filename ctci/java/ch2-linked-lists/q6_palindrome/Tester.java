@@ -72,7 +72,7 @@ public class Tester {
         a5.next = a6;
 
         boolean isPalindrome1 = isPalindromeIterative(a1);
-        // assertTrue(isPalindrome1);
+        assertTrue(isPalindrome1);
 
         Node<Character> b1 = new Node('a');
         Node<Character> b2 = new Node('b');
@@ -85,7 +85,7 @@ public class Tester {
         b4.next = b5;
 
         boolean isPalindrome2 = isPalindromeIterative(b1);
-        // assertTrue(isPalindrome2);
+        assertTrue(isPalindrome2);
 
         Node<Integer> c1 = new Node(1);
         Node<Integer> c2 = new Node(2);
@@ -100,7 +100,7 @@ public class Tester {
         c5.next = c6;
 
         boolean isPalindrome3 = isPalindromeIterative(c1);
-        // assertFalse(isPalindrome3);
+        assertFalse(isPalindrome3);
     }
 
     @Test
@@ -118,7 +118,7 @@ public class Tester {
         a5.next = a6;
 
         boolean isPalindrome1 = isPalindromeRecursive(a1);
-        // assertTrue(isPalindrome1);
+        assertTrue(isPalindrome1);
 
         Node<Character> b1 = new Node('a');
         Node<Character> b2 = new Node('b');
@@ -131,7 +131,7 @@ public class Tester {
         b4.next = b5;
 
         boolean isPalindrome2 = isPalindromeRecursive(b1);
-        // assertTrue(isPalindrome2);
+        assertTrue(isPalindrome2);
 
         Node<Integer> c1 = new Node(1);
         Node<Integer> c2 = new Node(2);
@@ -146,7 +146,7 @@ public class Tester {
         c5.next = c6;
 
         boolean isPalindrome3 = isPalindromeRecursive(c1);
-        // assertFalse(isPalindrome3);
+        assertFalse(isPalindrome3);
     }
 
     @Test
@@ -164,7 +164,7 @@ public class Tester {
         a5.next = a6;
 
         boolean isPalindrome1 = isPalindromeIterativeRunners(a1);
-        // assertTrue(isPalindrome1);
+        assertTrue(isPalindrome1);
 
         Node<Character> b1 = new Node('a');
         Node<Character> b2 = new Node('b');
@@ -177,7 +177,7 @@ public class Tester {
         b4.next = b5;
 
         boolean isPalindrome2 = isPalindromeIterativeRunners(b1);
-        // assertTrue(isPalindrome2);
+        assertTrue(isPalindrome2);
 
         Node<Integer> c1 = new Node(1);
         Node<Integer> c2 = new Node(2);
@@ -192,7 +192,7 @@ public class Tester {
         c5.next = c6;
 
         boolean isPalindrome3 = isPalindromeIterativeRunners(c1);
-        // assertFalse(isPalindrome3);
+        assertFalse(isPalindrome3);
     }
 
 }
