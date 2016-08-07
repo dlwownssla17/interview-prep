@@ -7,14 +7,14 @@ public class QuestionC {
     /* recursive with get length */
     public static boolean isPalindromeRecursive(Node n) {
         int length = getLength(n);
-        return isPalindromeRecursiveHelper(n, 0, length).result;
+        return isPalindromeRecursiveHelper(n, length).result;
     }
 
     /* helper returning palindrome result class */
-    private static PalindromeResult isPalindromeRecursiveHelper(Node n, int index, int length) {
-        if (index == length / 2) return length % 2 == 0 ? new PalindromeResult(true, n) : new PalindromeResult(true, n.next);
+    private static PalindromeResult isPalindromeRecursiveHelper(Node n, int remainingLength) {
+        if (remainingLength <= 1) return remainingLength == 0 ? new PalindromeResult(true, n) : new PalindromeResult(true, n.next);
 
-        PalindromeResult pr = isPalindromeRecursiveHelper(n.next, index + 1, length);
+        PalindromeResult pr = isPalindromeRecursiveHelper(n.next, remainingLength - 2);
         if (pr.result) {
             if (!n.data.equals(pr.compareNode.data)) pr.result = false;
             else pr.compareNode = pr.compareNode.next;
