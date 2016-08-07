@@ -4,7 +4,7 @@ package q7_intersection;
  * Created by jjlee on 8/7/16.
  */
 public class Question {
-
+    /* find intersection between two linked lists with get length and pointers */
     public static Node findIntersection(Node a, Node b) {
         if (a != null && b != null) {
             int aLength = 1;
