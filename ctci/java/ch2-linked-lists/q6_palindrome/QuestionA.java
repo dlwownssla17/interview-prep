@@ -27,4 +27,14 @@ public class QuestionA {
         if (a == null || b == null) return false;
         return (a.data.equals(b.data)) && identical(a.next, b.next);
     }
+
+    /* check if the given lists are identical (iterative) */
+    private static boolean identicalIterative(Node a, Node b) {
+        while (a != null && b != null) {
+            if (!a.data.equals(b.data)) return false;
+            a = a.next;
+            b = b.next;
+        }
+        return a == null && b == null;
+    }
 }
