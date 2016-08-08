@@ -1,7 +1,6 @@
 package q1_three_in_one;
 
 import org.testng.annotations.Test;
-import sun.invoke.empty.Empty;
 
 import java.util.EmptyStackException;
 
