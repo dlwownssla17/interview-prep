@@ -6,6 +6,7 @@ import java.util.Stack;
 /**
  * Created by jjlee on 8/7/16.
  */
+/* MinStack using node that have reference to the min node up to itself */
 public class MinStack<T extends Comparable<? super T>> {
     Stack<MinStackNode<T>> stack = new Stack<>();
 

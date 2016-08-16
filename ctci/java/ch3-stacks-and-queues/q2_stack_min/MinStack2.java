@@ -6,6 +6,7 @@ import java.util.Stack;
 /**
  * Created by jjlee on 8/7/16.
  */
+/* MinStack using extra stack that keeps track of the current min node at the top */
 public class MinStack2<T extends Comparable<? super T>> {
     Stack<T> stack = new Stack<>();
     Stack<T> minStack = new Stack<>();
