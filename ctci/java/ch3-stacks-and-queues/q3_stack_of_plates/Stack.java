@@ -28,6 +28,7 @@ public class Stack<T> {
         T data = top.data;
         top = top.below;
         if (top == null) bottom = null;
+        else top.above = null;
         capacity--;
         return data;
     }
@@ -37,6 +38,7 @@ public class Stack<T> {
         T data = bottom.data;
         bottom = bottom.above;
         if (bottom == null) top = null;
+        else bottom.below = null;
         capacity--;
         return data;
     }
