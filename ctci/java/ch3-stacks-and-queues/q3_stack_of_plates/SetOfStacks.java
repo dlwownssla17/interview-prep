@@ -6,6 +6,7 @@ import java.util.EmptyStackException;
 /**
  * Created by jjlee on 8/16/16.
  */
+/* SetOfStacks using ArrayList of custom stacks with access to top and bottom nodes */
 public class SetOfStacks<T> {
     private ArrayList<Stack<T>> setOfStacks;
     private int capacity;

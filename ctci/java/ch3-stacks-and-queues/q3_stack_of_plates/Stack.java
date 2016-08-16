@@ -5,6 +5,7 @@ import java.util.EmptyStackException;
 /**
  * Created by jjlee on 8/16/16.
  */
+/* custom stack with access to top and bottom nodes, where each node has reference to the nodes above and below */
 public class Stack<T> {
     private int capacity;
     private StackNode<T> top;
