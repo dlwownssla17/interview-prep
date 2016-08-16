@@ -3,7 +3,6 @@ package q2_stack_min;
 import org.testng.annotations.Test;
 
 import java.util.EmptyStackException;
-
 import static org.testng.Assert.*;
 
 /**
