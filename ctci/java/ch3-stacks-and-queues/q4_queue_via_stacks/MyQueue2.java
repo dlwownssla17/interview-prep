@@ -6,7 +6,7 @@ import java.util.Stack;
 /**
  * Created by jjlee on 8/16/16.
  */
-/* queue implemented with in and out stacks (faster for back-and-forth add and remove operations) */
+/* queue implemented with in and out stacks (faster for back-to-back add and remove operations) */
 public class MyQueue2<T> {
     private Stack<T> in;
     private Stack<T> out;
