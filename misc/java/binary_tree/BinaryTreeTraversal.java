@@ -8,7 +8,7 @@ import binary_tree.BinaryTreeNode;
 public class BinaryTreeTraversal {
 
     public static void visitNode(BinaryTreeNode n) {
-        System.out.println(n.data);
+        if (n != null) System.out.println(n.data);
     }
 
     public static void inOrderTraversal(BinaryTreeNode root) {
