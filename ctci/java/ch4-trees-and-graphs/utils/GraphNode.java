@@ -14,4 +14,8 @@ public class GraphNode<T> {
         this.data = data;
         adjacent = new LinkedList<>();
     }
+
+    public void setAdjacent(GraphNode<T> other) {
+        adjacent.add(other);
+    }
 }
