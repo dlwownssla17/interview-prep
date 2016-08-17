@@ -1,3 +1,5 @@
+package binary_tree;
+
 /**
  * Created by jjlee on 8/16/16.
  */

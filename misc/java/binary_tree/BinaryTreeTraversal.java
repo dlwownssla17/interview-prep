@@ -1,3 +1,7 @@
+package binary_tree;
+
+import binary_tree.BinaryTreeNode;
+
 /**
  * Created by jjlee on 8/16/16.
  */
