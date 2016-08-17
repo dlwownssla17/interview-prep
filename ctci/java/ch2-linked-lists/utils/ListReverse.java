@@ -1,4 +1,4 @@
-package q6_palindrome;
+package utils;
 
 /**
  * Created by jjlee on 7/31/16.

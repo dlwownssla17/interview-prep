@@ -1,5 +1,7 @@
 package q1_remove_dups;
 
+import utils.Node;
+
 import java.util.HashSet;
 
 /**

@@ -1,5 +1,7 @@
 package q5_sum_lists;
 
+import utils.Node;
+
 /**
  * Created by jjlee on 7/23/16.
  */

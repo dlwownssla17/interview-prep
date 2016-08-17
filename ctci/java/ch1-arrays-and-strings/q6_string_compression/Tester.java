@@ -1,6 +1,6 @@
 package q6_string_compression;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import static q6_string_compression.Question.*;
 

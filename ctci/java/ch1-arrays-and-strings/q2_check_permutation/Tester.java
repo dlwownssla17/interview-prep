@@ -1,6 +1,6 @@
 package q2_check_permutation;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import static q2_check_permutation.QuestionA.*;
 import static q2_check_permutation.QuestionB.*;

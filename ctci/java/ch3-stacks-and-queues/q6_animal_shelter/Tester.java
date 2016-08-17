@@ -1,6 +1,6 @@
 package q6_animal_shelter;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.NoSuchElementException;
 
@@ -10,16 +10,24 @@ import static org.testng.Assert.*;
  * Created by jjlee on 8/16/16.
  */
 public class Tester {
+    AnimalQueue q;
+    Cat c1, c2, c3, c4;
+    Dog d1, d2, d3;
+
+    @BeforeTest
+    public void setup() throws Exception {
+        q = new AnimalQueue();
+        c1 = new Cat();
+        c2 = new Cat();
+        c3 = new Cat();
+        c4 = new Cat();
+        d1 = new Dog();
+        d2 = new Dog();
+        d3 = new Dog();
+    }
+
     @Test
     public void testAnimalQueue() throws Exception {
-        AnimalQueue q = new AnimalQueue();
-        Cat c1 = new Cat();
-        Cat c2 = new Cat();
-        Cat c3 = new Cat();
-        Cat c4 = new Cat();
-        Dog d1 = new Dog();
-        Dog d2 = new Dog();
-        Dog d3 = new Dog();
         try { q.dequeueAny(); fail(); } catch(NoSuchElementException e) { } catch(Exception e) { fail(); }
         try { q.dequeueDog(); fail(); } catch(NoSuchElementException e) { } catch(Exception e) { fail(); }
         try { q.dequeueCat(); fail(); } catch(NoSuchElementException e) { } catch(Exception e) { fail(); }

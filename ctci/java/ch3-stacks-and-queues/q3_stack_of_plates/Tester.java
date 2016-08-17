@@ -1,6 +1,6 @@
 package q3_stack_of_plates;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.EmptyStackException;
 
@@ -10,10 +10,16 @@ import static org.testng.Assert.*;
  * Created by jjlee on 8/16/16.
  */
 public class Tester {
+    SetOfStacks<Integer> s;
+
+    @BeforeMethod
+    public void setup() throws Exception {
+        s = new SetOfStacks<>(4);
+    }
+
     @Test
     public void testSetOfStacks() throws Exception {
         try { new SetOfStacks<>(0); fail(); } catch(IllegalArgumentException e) { } catch(Exception e) { fail(); }
-        SetOfStacks<Integer> s = new SetOfStacks<>(4);
         try { s.pop(); fail(); } catch(EmptyStackException e) { } catch(Exception e) { fail(); }
         s.push(0);
         s.push(1);

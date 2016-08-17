@@ -1,6 +1,6 @@
 package q9_string_rotation;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import static q9_string_rotation.Question.*;
 

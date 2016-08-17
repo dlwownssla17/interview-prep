@@ -1,5 +1,7 @@
 package q7_intersection;
 
+import utils.Node;
+
 /**
  * Created by jjlee on 8/7/16.
  */

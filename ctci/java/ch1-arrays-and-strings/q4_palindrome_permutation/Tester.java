@@ -1,6 +1,6 @@
 package q4_palindrome_permutation;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import static q4_palindrome_permutation.Question.*;
 

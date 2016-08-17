@@ -1,5 +1,7 @@
 package q6_palindrome;
 
+import utils.Node;
+
 /**
  * Created by jjlee on 7/31/16.
  */

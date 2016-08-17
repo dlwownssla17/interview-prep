@@ -1,6 +1,6 @@
 package q4extra_stack_via_queues;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.EmptyStackException;
 
@@ -10,9 +10,15 @@ import static org.testng.Assert.*;
  * Created by jjlee on 8/16/16.
  */
 public class Tester {
+    MyStack<Integer> s;
+
+    @BeforeMethod
+    public void setup() throws Exception {
+        s = new MyStack<>();
+    }
+
     @Test
     public void testMyStack() throws Exception {
-        MyStack<Integer> s = new MyStack<>();
         assertTrue(s.isEmpty());
         try { s.pop(); fail(); } catch(EmptyStackException e) { } catch(Exception e) { fail(); }
         try { s.peek(); fail(); } catch(EmptyStackException e) { } catch(Exception e) { fail(); }

@@ -1,5 +1,7 @@
 package q2_return_kth_to_last;
 
+import utils.Node;
+
 /**
  * Created by jjlee on 7/23/16.
  */

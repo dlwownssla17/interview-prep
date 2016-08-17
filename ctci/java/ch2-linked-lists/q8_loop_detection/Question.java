@@ -1,5 +1,7 @@
 package q8_loop_detection;
 
+import utils.Node;
+
 /**
  * Created by jjlee on 8/7/16.
  */

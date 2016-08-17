@@ -1,5 +1,7 @@
 package q6_palindrome;
 
+import utils.Node;
+
 import java.util.Stack;
 
 /**

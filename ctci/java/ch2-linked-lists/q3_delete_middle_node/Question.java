@@ -1,5 +1,7 @@
 package q3_delete_middle_node;
 
+import utils.Node;
+
 /**
  * Created by jjlee on 7/23/16.
  */

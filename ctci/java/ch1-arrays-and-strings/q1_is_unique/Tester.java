@@ -1,6 +1,6 @@
 package q1_is_unique;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import static q1_is_unique.QuestionA.*;
 import static q1_is_unique.QuestionB.*;

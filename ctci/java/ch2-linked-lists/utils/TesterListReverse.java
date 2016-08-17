@@ -1,23 +1,28 @@
-package q6_palindrome;
+package utils;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.*;
-import static q6_palindrome.ListReverse.*;
+import static utils.ListReverse.*;
 
 /**
  * Created by jjlee on 7/31/16.
  */
 public class TesterListReverse {
-    @Test
-    public void testReverse() throws Exception {
-        Node<Integer> a = new Node(1);
-        Node<Integer> b = new Node(2);
-        Node<Integer> c = new Node(3);
-        Node<Integer> d = new Node(4);
+    Node<Integer> a, b, c, d;
+
+    @BeforeMethod
+    public void setup() throws Exception {
+        a = new Node(1);
+        b = new Node(2);
+        c = new Node(3);
+        d = new Node(4);
         a.next = b;
         b.next = c;
         c.next = d;
+    }
 
+    @Test
+    public void testReverse() throws Exception {
         Node<Integer> head = reverse(a);
 
         int[] arr = new int[4];
@@ -34,14 +39,6 @@ public class TesterListReverse {
 
     @Test
     public void testReverseIterative() throws Exception {
-        Node<Integer> a = new Node(1);
-        Node<Integer> b = new Node(2);
-        Node<Integer> c = new Node(3);
-        Node<Integer> d = new Node(4);
-        a.next = b;
-        b.next = c;
-        c.next = d;
-
         Node<Integer> head = reverseIterative(a);
 
         int[] arr = new int[4];

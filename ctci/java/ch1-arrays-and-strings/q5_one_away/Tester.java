@@ -1,6 +1,6 @@
 package q5_one_away;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import static org.testng.Assert.*;
 import static q5_one_away.Question.*;
 

@@ -1,6 +1,8 @@
 package q6_palindrome;
 
-import static q6_palindrome.ListReverse.*;
+import utils.Node;
+
+import static utils.ListReverse.*;
 
 /**
  * Created by jjlee on 7/31/16.

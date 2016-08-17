@@ -1,6 +1,6 @@
 package q5_sort_stack;
 
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.Stack;
 
@@ -12,14 +12,20 @@ import static q5_sort_stack.QuestionB.*;
  * Created by jjlee on 8/16/16.
  */
 public class Tester {
-    @Test
-    public void testSortWithOneAdditionalStack() throws Exception {
-        Stack<Integer> s = new Stack<>();
+    Stack<Integer> s;
+
+    @BeforeMethod
+    public void setup() throws Exception {
+        s = new Stack<>();
         s.push(3);
         s.push(4);
         s.push(1);
         s.push(0);
         s.push(2);
+    }
+
+    @Test
+    public void testSortWithOneAdditionalStack() throws Exception {
         s = sortWithOneAdditionalStack(s);
         assertEquals((int) s.pop(), 0);
         assertEquals((int) s.pop(), 1);
@@ -30,12 +36,6 @@ public class Tester {
 
     @Test
     public void testSortWithMergeSort() throws Exception {
-        Stack<Integer> s = new Stack<>();
-        s.push(3);
-        s.push(4);
-        s.push(1);
-        s.push(0);
-        s.push(2);
         sortWithMergeSort(s);
         assertEquals((int) s.pop(), 0);
         assertEquals((int) s.pop(), 1);

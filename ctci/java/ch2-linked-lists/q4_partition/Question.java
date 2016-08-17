@@ -1,11 +1,13 @@
 package q4_partition;
 
+import utils.Node;
+
 /**
  * Created by jjlee on 7/23/16.
  */
 public class Question {
     /* partition with one dummy node, updating the latest less node to the current node if current node is less */
-    public static Node partition(Node<Integer> head, int x) {
+    public static Node<Integer> partition(Node<Integer> head, int x) {
         Node<Integer> dummy = new Node<>();
         Node<Integer> lastLess = dummy;
         lastLess.next = head;
@@ -35,7 +37,7 @@ public class Question {
     }
 
     /* partition with two dummy nodes, adding each node to the new lists starting with the dummy nodes */
-    public static Node partitionTwoDummyNodes(Node<Integer> head, int x) {
+    public static Node<Integer> partitionTwoDummyNodes(Node<Integer> head, int x) {
         Node<Integer> dummyLess = new Node<>();
         Node<Integer> currentLastLess = dummyLess;
         Node<Integer> dummyMore = new Node<>();
