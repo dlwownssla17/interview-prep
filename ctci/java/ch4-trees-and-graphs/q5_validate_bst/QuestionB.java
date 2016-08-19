@@ -6,7 +6,7 @@ import utils.BinaryTreeNode;
  * Created by jjlee on 8/19/16.
  */
 public class QuestionB {
-    /* use Result class with isBST for subtree as well as that subtree's min and max (assumes left <= root <= right) */
+    /* use Result class with isBST for subtree as well as that subtree's min and max (assumes left <= root < right) */
     public static <T extends Comparable<? super T>> boolean checkBSTResultWithMinAndMax(BinaryTreeNode<T> n) {
         return checkBSTResultWithMinAndMaxHelper(n).isBST;
     }
@@ -22,7 +22,7 @@ public class QuestionB {
         Result<T> fromLeft = checkBSTResultWithMinAndMaxHelper(n.left);
         if (!fromLeft.isBST || (fromLeft.max != null && fromLeft.max.compareTo(n.data) == 1)) return result;
         Result<T> fromRight = checkBSTResultWithMinAndMaxHelper(n.right);
-        if (!fromRight.isBST || (fromRight.min != null && fromRight.min.compareTo(n.data) == -1)) return result;
+        if (!fromRight.isBST || (fromRight.min != null && fromRight.min.compareTo(n.data) != 1)) return result;
 
         result.isBST = true;
         result.min = fromLeft.min != null ? fromLeft.min : n.data;
