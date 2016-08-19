@@ -15,22 +15,15 @@ public class QuestionB {
     public static <T> ArrayList<List<BinaryTreeNode<T>>> createLevelLinkedListsBFS(BinaryTreeNode<T> n) {
         ArrayList<List<BinaryTreeNode<T>>> levels = new ArrayList<>();
         if (n != null) {
-            Queue<BinaryTreeNode<T>> q = new LinkedList<>();
-            Queue<Integer> levelQueue = new LinkedList<>();
-            q.add(n);
-            levelQueue.add(0);
-            while (!q.isEmpty() && !levelQueue.isEmpty()) {
-                BinaryTreeNode<T> current = q.remove();
-                int currentLevel = levelQueue.remove();
-                if (levels.size() <= currentLevel) levels.add(new LinkedList<>());
-                levels.get(currentLevel).add(current);
-                if (current.left != null) {
-                    q.add(current.left);
-                    levelQueue.add(currentLevel + 1);
-                }
-                if (current.right != null) {
-                    q.add(current.right);
-                    levelQueue.add(currentLevel + 1);
+            List<BinaryTreeNode<T>> currentLevel = new LinkedList<>();
+            currentLevel.add(n);
+            while (!currentLevel.isEmpty()) {
+                levels.add(currentLevel);
+                List<BinaryTreeNode<T>> previousLevel = currentLevel;
+                currentLevel = new LinkedList<>();
+                for (BinaryTreeNode<T> parent : previousLevel) {
+                    if (parent.left != null) currentLevel.add(parent.left);
+                    if (parent.right != null) currentLevel.add(parent.right);
                 }
             }
         }
