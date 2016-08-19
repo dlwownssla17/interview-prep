@@ -9,7 +9,8 @@ import java.util.List;
  * Created by jjlee on 8/19/16.
  */
 public class QuestionA {
-    /* store data from all nodes in order into list, then iterate through list (inefficient) */
+    /* store data from all nodes in order into list, then iterate through list
+       (inefficient, assumes left <= root <= right) */
     public static <T extends Comparable<? super T>> boolean checkBSTInOrderTraversal(BinaryTreeNode<T> n) {
         List<T> inOrder = new LinkedList<>();
         populateInOrder(n, inOrder);

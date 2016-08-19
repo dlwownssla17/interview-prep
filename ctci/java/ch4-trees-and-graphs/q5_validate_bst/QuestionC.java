@@ -6,7 +6,8 @@ import utils.BinaryTreeNode;
  * Created by jjlee on 8/19/16.
  */
 public class QuestionC {
-    /* use acceptable range with min and max as arguments (implemented for Integer parameter) */
+    /* use acceptable range with min and max as arguments
+       (implemented for Integer parameter, assumes left <= root <= right) */
     public static boolean checkBSTAcceptableRange(BinaryTreeNode<Integer> n) {
         return checkBSTAcceptableRangeHelper(n, Integer.MIN_VALUE, Integer.MAX_VALUE);
     }
