@@ -45,4 +45,20 @@ public class Tester {
         assertEquals(firstCommonAncestor(tree.get(10), tree.get(23)), tree.get(0));
         assertEquals(firstCommonAncestor(tree.get(15), tree.get(30)), tree.get(0));
     }
+
+    @Test
+    public void testFirstCommonAncestorFromRoot() throws Exception {
+        BinaryTreeNodeWithParent<Integer> root = tree.get(0);
+        assertNull(firstCommonAncestorFromRoot(root, tree.get(0), null));
+        assertNull(firstCommonAncestorFromRoot(root, tree.get(0), tree.get(31)));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(0), tree.get(0)), tree.get(0));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(7), tree.get(7)), tree.get(7));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(1), tree.get(18)), tree.get(1));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(18), tree.get(1)), tree.get(1));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(1), tree.get(2)), tree.get(0));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(4), tree.get(7)), tree.get(1));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(23), tree.get(27)), tree.get(2));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(10), tree.get(23)), tree.get(0));
+        assertEquals(firstCommonAncestorFromRoot(root, tree.get(15), tree.get(30)), tree.get(0));
+    }
 }

@@ -7,7 +7,7 @@ import utils.BinaryTreeNodeWithParent;
  * Created by jjlee on 8/20/16.
  */
 public class QuestionA {
-
+    /* check if one is descendant of the other, then continue checking if one is descendant of sibling */
     public static <T> BinaryTreeNodeWithParent<T> firstCommonAncestor(BinaryTreeNodeWithParent<T> p,
                                                                       BinaryTreeNodeWithParent<T> q) {
         if (p == null || q == null) return null;
