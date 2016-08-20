@@ -12,7 +12,9 @@ public class Question {
         if (n == null) return null;
         if (n.right != null) {
             BinaryTreeNodeWithParent<T> leftMostChild = n.right;
-            while (leftMostChild.left != null) leftMostChild = leftMostChild.left;
+            while (leftMostChild.left != null) {
+                leftMostChild = leftMostChild.left;
+            }
             return leftMostChild;
         }
         BinaryTreeNodeWithParent<T> firstRightParent = n.parent;
