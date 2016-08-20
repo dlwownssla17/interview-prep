@@ -30,11 +30,25 @@ public class Main {
         }
     }
 
+    private static void testBuildOrderTopologicalSort(String[][] dependencies) throws Exception {
+        String[] buildOrder = buildOrderTopologicalSort(projects, dependencies);
+        if (buildOrder == null) {
+            System.out.println("Circular dependency.");
+        } else {
+            for (String s : buildOrder) {
+                System.out.println(s);
+            }
+        }
+    }
+
     public static void main(String[] args) throws Exception {
         setup();
         testBuildOrder(dependencies);
         System.out.println();
         testBuildOrder(dependenciesCircular);
         System.out.println();
+        testBuildOrderTopologicalSort(dependencies);
+        System.out.println();
+        testBuildOrderTopologicalSort(dependenciesCircular);
     }
 }

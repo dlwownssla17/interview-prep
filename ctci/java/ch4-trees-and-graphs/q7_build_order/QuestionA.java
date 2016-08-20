@@ -9,14 +9,16 @@ import java.util.*;
  * Created by jjlee on 8/19/16.
  */
 public class QuestionA {
-
+    /* find a valid build order given projects and their dependencies by continuing to process projects with no
+       dependency */
     public static String[] buildOrder(String[] projects, String[][] dependencies) {
         HashMap<String, GraphNodeForTopologicalSort<String>> allNodes = createAllNodes(projects);
-        Queue<GraphNodeForTopologicalSort<String>> nodesWithNoIncoming = getAllNodesWithNoIncoming(allNodes, dependencies);
-        String[] order = new String[projects.length];
-        return processNodesWithNoIncoming(nodesWithNoIncoming, order);
+        Queue<GraphNodeForTopologicalSort<String>> nodesWithNoIncoming =
+                getAllNodesWithNoIncoming(allNodes, dependencies);
+        return processNodesWithNoIncoming(nodesWithNoIncoming, projects.length);
     }
 
+    /* create the graph nodes for all the projects */
     private static HashMap<String, GraphNodeForTopologicalSort<String>> createAllNodes(String[] projects) {
         HashMap<String, GraphNodeForTopologicalSort<String>> allNodes = new HashMap<>();
         for (String s : projects) {
@@ -25,6 +27,7 @@ public class QuestionA {
         return allNodes;
     }
 
+    /* find nodes with no incoming edges and connect nodes according to their dependencies */
     private static Queue<GraphNodeForTopologicalSort<String>> getAllNodesWithNoIncoming
             (HashMap<String, GraphNodeForTopologicalSort<String>> allNodes, String[][] dependencies) {
         for (String[] dependency : dependencies) {
@@ -41,8 +44,10 @@ public class QuestionA {
         return nodesWithNoIncoming;
     }
 
+    /* continue processing nodes with no incoming edges until none left */
     private static String[] processNodesWithNoIncoming(Queue<GraphNodeForTopologicalSort<String>> nodesWithNoIncoming,
-                                                   String[] order) {
+                                                   int numProjects) {
+        String[] order = new String[numProjects];
         int processed = 0;
         while (!nodesWithNoIncoming.isEmpty()) {
             GraphNodeForTopologicalSort<String> node = nodesWithNoIncoming.remove();
@@ -52,6 +57,6 @@ public class QuestionA {
             }
             order[processed++] = node.data;
         }
-        return processed == order.length ? order : null;
+        return processed == numProjects ? order : null;
     }
 }
