@@ -8,7 +8,7 @@ import java.util.HashSet;
  * Created by jjlee on 8/20/16.
  */
 public class QuestionB {
-
+    /* check if both exist in tree, then check which node has different subtrees that contain them */
     public static <T> BinaryTreeNodeWithParent<T> firstCommonAncestorFromRoot(BinaryTreeNodeWithParent<T> root,
                                                                               BinaryTreeNodeWithParent<T> p,
                                                                               BinaryTreeNodeWithParent<T> q) {
