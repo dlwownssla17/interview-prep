@@ -8,8 +8,8 @@ import utils.BinaryTreeNode;
 public class QuestionB {
     private static Character NULL_CHARACTER = '.';
 
-    /* check if t2 is a subtree of t1 by comparing the in-order and pre-order traversal strings (O(M) time, O(M) space)
-       (data should not be NULL_CHARACTER) */
+    /* check if t2 is a subtree of t1 by comparing in-order and pre-order traversals, data should not be NULL_CHARACTER
+       (O(M + N) time, O(M + N) space) */
     public static <T> boolean containsTreeInOrderPreOrder(BinaryTreeNode<T> t1, BinaryTreeNode<T> t2) {
         return inOrderString(t1).contains(inOrderString(t2)) && preOrderString(t1).contains(preOrderString(t2));
     }
