@@ -47,22 +47,21 @@ public class Question {
     private static <T extends Comparable<? super T>> void weaveBSTSequencesHelper(ArrayList<LinkedList<T>> sequences,
                                                                                   LinkedList<T> seq1, LinkedList<T> seq2,
                                                                                   LinkedList<T> buf) {
-        if (seq1.isEmpty() && seq2.isEmpty()) {
+        if (seq1.isEmpty() || seq2.isEmpty()) {
             LinkedList<T> newSequence = new LinkedList<>();
-            for (T data : buf) {
-                newSequence.add(data);
-            }
+            newSequence.addAll(buf);
+            newSequence.addAll(seq1);
+            newSequence.addAll(seq2);
             sequences.add(newSequence);
+            return;
         }
-        if (!seq1.isEmpty()) {
-            buf.add(seq1.remove());
-            weaveBSTSequencesHelper(sequences, seq1, seq2, buf);
-            seq1.addFirst(buf.removeLast());
-        }
-        if (!seq2.isEmpty()) {
-            buf.add(seq2.remove());
-            weaveBSTSequencesHelper(sequences, seq1, seq2, buf);
-            seq2.addFirst(buf.removeLast());
-        }
+
+        buf.add(seq1.remove());
+        weaveBSTSequencesHelper(sequences, seq1, seq2, buf);
+        seq1.addFirst(buf.removeLast());
+
+        buf.add(seq2.remove());
+        weaveBSTSequencesHelper(sequences, seq1, seq2, buf);
+        seq2.addFirst(buf.removeLast());
     }
 }
