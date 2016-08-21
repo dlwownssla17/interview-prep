@@ -9,6 +9,7 @@ import java.util.LinkedList;
 
 import static org.testng.Assert.*;
 import static q9_bst_sequences.Question.*;
+import static utils.BinaryTree.*;
 
 /**
  * Created by jjlee on 8/20/16.
@@ -51,12 +52,6 @@ public class Tester {
             if (root.right == null) root.right = new BinaryTreeNode<>(data);
             else add(root.right, data);
         }
-    }
-
-    private <T> boolean sameData(BinaryTreeNode<T> n1, BinaryTreeNode<T> n2) {
-        if (n1 == null && n2 == null) return true;
-        if (n1 == null || n2 == null) return false;
-        return n1.data.equals(n2.data) && sameData(n1.left, n2.left) && sameData(n1.right, n2.right);
     }
 
     @Test
