@@ -97,20 +97,20 @@ public class Tester {
     }
 
     @Test
-    public void testContainsTreeInOrderPreOrder() throws Exception {
+    public void testContainsTreePreOrder() throws Exception {
         BinaryTreeNode<Integer> root = bigTree.get(0);
-        assertTrue(containsTreeInOrderPreOrder(null, null));
-        assertTrue(containsTreeInOrderPreOrder(root, null));
-        assertFalse(containsTreeInOrderPreOrder(null, root));
-        assertFalse(containsTreeInOrderPreOrder(root, smallTree0.get(0)));
-        assertTrue(containsTreeInOrderPreOrder(root, smallTree1.get(0)));
-        assertTrue(containsTreeInOrderPreOrder(root, smallTree2.get(0)));
-        assertTrue(containsTreeInOrderPreOrder(root, smallTree3.get(0)));
-        assertTrue(containsTreeInOrderPreOrder(root, smallTree4.get(0)));
-        assertFalse(containsTreeInOrderPreOrder(root, smallTree5.get(0)));
+        assertTrue(containsTreePreOrder(null, null));
+        assertTrue(containsTreePreOrder(root, null));
+        assertFalse(containsTreePreOrder(null, root));
+        assertFalse(containsTreePreOrder(root, smallTree0.get(0)));
+        assertTrue(containsTreePreOrder(root, smallTree1.get(0)));
+        assertTrue(containsTreePreOrder(root, smallTree2.get(0)));
+        assertTrue(containsTreePreOrder(root, smallTree3.get(0)));
+        assertTrue(containsTreePreOrder(root, smallTree4.get(0)));
+        assertFalse(containsTreePreOrder(root, smallTree5.get(0)));
 
-        assertTrue(containsTreeInOrderPreOrder(a0, b0));
-        assertFalse(containsTreeInOrderPreOrder(a0, c0));
-        assertFalse(containsTreeInOrderPreOrder(a0, d0));
+        assertTrue(containsTreePreOrder(a0, b0));
+        assertFalse(containsTreePreOrder(a0, c0));
+        assertFalse(containsTreePreOrder(a0, d0));
     }
 }
