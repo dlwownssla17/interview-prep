@@ -3,7 +3,6 @@ package q10_check_subtree;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import utils.BinaryTreeNode;
-import utils.BinaryTreeNodeWithParent;
 
 import java.util.ArrayList;
 
@@ -16,6 +15,7 @@ import static q10_check_subtree.QuestionB.*;
  */
 public class Tester {
     ArrayList<BinaryTreeNode<Integer>> bigTree, smallTree0, smallTree1, smallTree2, smallTree3, smallTree4, smallTree5;
+    BinaryTreeNode<Integer> a0, a1, a2, a3, b0, b1, c0, c1, c2, d0, d1, d2, d3;
 
     @BeforeMethod
     public void setup() throws Exception {
@@ -36,6 +36,29 @@ public class Tester {
             BinaryTreeNode<Integer> rightChild = smallTree5.get(i + 1);
             parent.right = rightChild;
         }
+
+        a0 = new BinaryTreeNode<>(0);
+        a1 = new BinaryTreeNode<>(1);
+        a2 = new BinaryTreeNode<>(0);
+        a3 = new BinaryTreeNode<>(1);
+        a0.left = a1;
+        a0.right = a2;
+        a2.right = a3;
+        b0 = new BinaryTreeNode<>(0);
+        b1 = new BinaryTreeNode<>(1);
+        b0.right = b1;
+        c0 = new BinaryTreeNode<>(0);
+        c1 = new BinaryTreeNode<>(0);
+        c2 = new BinaryTreeNode<>(1);
+        c0.right = c1;
+        c1.left = c2;
+        d0 = new BinaryTreeNode<>(0);
+        d1 = new BinaryTreeNode<>(1);
+        d2 = new BinaryTreeNode<>(0);
+        d3 = new BinaryTreeNode<>(1);
+        d0.left = d1;
+        d0.right = d2;
+        d2.left = d3;
     }
 
     private ArrayList<BinaryTreeNode<Integer>> createPowerOfTwoPyramidTree(int initPow, int powerOfTwoSize) {
@@ -67,20 +90,27 @@ public class Tester {
         assertTrue(containsTree(root, smallTree3.get(0)));
         assertTrue(containsTree(root, smallTree4.get(0)));
         assertFalse(containsTree(root, smallTree5.get(0)));
+
+        assertTrue(containsTree(a0, b0));
+        assertFalse(containsTree(a0, c0));
+        assertFalse(containsTree(a0, d0));
     }
 
     @Test
-    public void testContainsTreeOneVisitMultipleChecks() throws Exception {
+    public void testContainsTreeInOrderPreOrder() throws Exception {
         BinaryTreeNode<Integer> root = bigTree.get(0);
-        assertTrue(containsTreeOneVisitMultipleChecks(null, null));
-        assertTrue(containsTreeOneVisitMultipleChecks(root, null));
-        assertFalse(containsTreeOneVisitMultipleChecks(null, root));
-        assertFalse(containsTreeOneVisitMultipleChecks(root, smallTree0.get(0)));
-        assertTrue(containsTreeOneVisitMultipleChecks(root, smallTree1.get(0)));
-        assertTrue(containsTreeOneVisitMultipleChecks(root, smallTree2.get(0)));
-        assertTrue(containsTreeOneVisitMultipleChecks(root, smallTree3.get(0)));
-        assertTrue(containsTreeOneVisitMultipleChecks(root, smallTree4.get(0)));
-        assertFalse(containsTreeOneVisitMultipleChecks(root, smallTree5.get(0)));
+        assertTrue(containsTreeInOrderPreOrder(null, null));
+        assertTrue(containsTreeInOrderPreOrder(root, null));
+        assertFalse(containsTreeInOrderPreOrder(null, root));
+        assertFalse(containsTreeInOrderPreOrder(root, smallTree0.get(0)));
+        assertTrue(containsTreeInOrderPreOrder(root, smallTree1.get(0)));
+        assertTrue(containsTreeInOrderPreOrder(root, smallTree2.get(0)));
+        assertTrue(containsTreeInOrderPreOrder(root, smallTree3.get(0)));
+        assertTrue(containsTreeInOrderPreOrder(root, smallTree4.get(0)));
+        assertFalse(containsTreeInOrderPreOrder(root, smallTree5.get(0)));
 
+        assertTrue(containsTreeInOrderPreOrder(a0, b0));
+        assertFalse(containsTreeInOrderPreOrder(a0, c0));
+        assertFalse(containsTreeInOrderPreOrder(a0, d0));
     }
 }

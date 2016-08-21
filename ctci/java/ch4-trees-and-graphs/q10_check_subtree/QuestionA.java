@@ -6,7 +6,7 @@ import utils.BinaryTreeNode;
  * Created by jjlee on 8/20/16.
  */
 public class QuestionA {
-    /* naive way to check if t2 is a subtree of t1 from every node that matches its root */
+    /* check if t2 is a subtree of t1 from every node that matches its root recursively (O(MN) time, O(logM) space) */
     public static <T> boolean containsTree(BinaryTreeNode<T> t1, BinaryTreeNode<T> t2) {
         if (t2 == null) return true;
         return containsTreeHelper(t1, t2);
