@@ -29,9 +29,9 @@ public class Question {
         if (n == 0) return "0";
         StringBuilder s = new StringBuilder();
         while (n != 0) {
-            s.insert(0, n & 1);
+            s.append(n & 1);
             n >>>= 1;
         }
-        return s.toString();
+        return s.reverse().toString();
     }
 }
