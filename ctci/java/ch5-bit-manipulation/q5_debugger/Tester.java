@@ -11,6 +11,7 @@ import static q5_debugger.Question.*;
 public class Tester {
     @Test
     public void testIsPowerOfTwo() throws Exception {
+        assertTrue(isPowerOfTwo(0));
         assertTrue(isPowerOfTwo(1));
         assertTrue(isPowerOfTwo(2));
         assertTrue(isPowerOfTwo(4));
