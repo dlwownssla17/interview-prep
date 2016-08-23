@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 public class QuestionB {
     private static int SEQUENCE_LENGTH = 32;
 
-    /* given a positive integer, compute the next smallest number using an arithmetic approach */
+    /* given a positive integer, compute the next smallest number with same number of 1s using an arithmetic approach */
     public static int nextSmallestArithmetic(int n) {
         int[] c = getTrailingOnesAndFollowingZeros(n);
         return n - (1 << c[1]) - (1 << (c[0] - 1)) + 1;
@@ -28,7 +28,7 @@ public class QuestionB {
         return c;
     }
 
-    /* given a positive integer, compute the next largest number using an arithmetic approach */
+    /* given a positive integer, compute the next largest number with same number of 1s using an arithmetic approach */
     public static int nextLargestArithmetic(int n) {
         int[] c = getTrailingZerosAndFollowingOnes(n);
         return n + (1 << c[0]) + (1 << (c[1] - 1)) - 1;

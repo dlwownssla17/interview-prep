@@ -8,7 +8,7 @@ import java.util.NoSuchElementException;
 public class QuestionA {
     private static int SEQUENCE_LENGTH = 32;
 
-    /* given a positive integer, compute the next smallest number using a bit manipulation approach */
+    /* given a positive integer, compute the next smallest number with same number of 1s with bit manipulation */
     public static int nextSmallest(int n) {
         int oneCount = 0;
         int shifted = n;
@@ -29,7 +29,7 @@ public class QuestionA {
         return (n & bitMask) | oneBits;
     }
 
-    /* given a positive integer, compute the next largest number using a bit manipulation approach */
+    /* given a positive integer, compute the next largest number with same number of 1s with bit manipulation */
     public static int nextLargest(int n) {
         int oneCount = 0;
         int shifted = n;
