@@ -6,6 +6,8 @@ package q3_flip_bit_to_win;
 public class Question {
     private static int SEQUENCE_LENGTH = 32;
 
+    /* compute the length of the longest sequence of 1s that can be created by flipping one bit from a 0 to a 1
+       (O(b) time, O(1) space) */
     public static int longestSequence(int n) {
         if (n == -1) return SEQUENCE_LENGTH;
         int ithBitMask = 1;
@@ -33,6 +35,8 @@ public class Question {
         return previousOne ? Math.max(max, thisOneSequence + 1 + (bridgeSequences ? lastOneSequence : 0)) : max;
     }
 
+    /* compute the length of the longest sequence of 1s that can be created by flipping one bit from a 0 to a 1
+       (same, but a bit cleaner) */
     public static int longestSequence2(int n) {
         int searchingFor = 0;
         int[] sequences = { 0, 0, 0 };
