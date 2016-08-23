@@ -6,8 +6,8 @@ package q7_pairwise_swap;
 public class Question {
     /* swap odd and even bits in given integer */
     public static int pairwiseSwap(int n) {
-        int evenBitsAfterSwap = (n << 1) & 0xAAAA;
-        int oddBitsAfterSwap = (n >>> 1) & 0x5555;
+        int evenBitsAfterSwap = (n << 1) & 0xAAAAAAAA;
+        int oddBitsAfterSwap = (n >>> 1) & 0x55555555;
         return evenBitsAfterSwap | oddBitsAfterSwap;
     }
 }
