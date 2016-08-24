@@ -7,7 +7,7 @@ import java.util.ArrayList;
  * Created by jjlee on 8/23/16.
  */
 public class QuestionA {
-
+    /* compute all subsets of given set using recursion building off of smaller superset */
     public static <T> ArrayList<ArrayList<T>> powerSet(ArrayList<T> set) {
         if (set.isEmpty()) return new ArrayList<>();
         return powerSetHelper(set);

@@ -63,6 +63,34 @@ public class Tester {
         System.out.println("---");
     }
 
+    @Test
+    public void testPowerSetIncludeExclude() throws Exception {
+        ArrayList<ArrayList<Integer>> powerSetA = powerSetIncludeExclude(a);
+        assertTrue(powerSetA.isEmpty());
+        printPowerSet(powerSetA);
+        System.out.println("---");
+
+        ArrayList<ArrayList<Integer>> powerSetB = powerSetIncludeExclude(b);
+        assertEquals(powerSetB.size(), 2);
+        printPowerSet(powerSetB);
+        System.out.println("---");
+
+        ArrayList<ArrayList<Integer>> powerSetC = powerSetIncludeExclude(c);
+        assertEquals(powerSetC.size(), 4);
+        printPowerSet(powerSetC);
+        System.out.println("---");
+
+        ArrayList<ArrayList<Integer>> powerSetD = powerSetIncludeExclude(d);
+        assertEquals(powerSetD.size(), 16);
+        printPowerSet(powerSetD);
+        System.out.println("---");
+
+        ArrayList<ArrayList<Integer>> powerSetE = powerSetIncludeExclude(e);
+        assertEquals(powerSetE.size(), 16);
+        printPowerSet(powerSetE);
+        System.out.println("---");
+    }
+
     private static <T> void printPowerSet(ArrayList<ArrayList<T>> powerSet) {
         for (ArrayList<T> subset : powerSet) {
             for (T item : subset) {
