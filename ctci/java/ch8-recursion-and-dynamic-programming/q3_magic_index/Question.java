@@ -30,7 +30,7 @@ public class Question {
         else return getMagicIndexRecursiveHelper(arr, low, mid - 1);
     }
 
-    /* must check both sides because of duplicates (O(N) time, O(N) space) */
+    /* must check both sides because of duplicates (O(N) time, O(logN) space) */
     public static int getMagicIndexDup(int[] arr) {
         return getMagicIndexDupRecursiveHelper(arr, 0, arr.length - 1);
     }
