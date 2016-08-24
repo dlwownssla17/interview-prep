@@ -41,11 +41,11 @@ public class Question {
         if (arr[mid] == mid) return mid;
         else if (arr[mid] < mid) {
             int right = getMagicIndexDupRecursiveHelper(arr, mid + 1, high);
-            if (right != -1 || arr[mid] < 0) return right;
+            if (right != -1) return right;
             return getMagicIndexDupRecursiveHelper(arr, low, arr[mid]);
         } else {
             int left = getMagicIndexDupRecursiveHelper(arr, low, mid - 1);
-            if (left != -1 || arr[mid] >= arr.length) return left;
+            if (left != -1) return left;
             return getMagicIndexDupRecursiveHelper(arr, arr[mid], high);
         }
     }
