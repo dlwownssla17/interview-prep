@@ -6,8 +6,8 @@ package q8_draw_line;
 public class Question {
     private static int BYTE_LENGTH = 8;
 
-    /* use bitmasks for possibly the leftmost and rightmost indices and set the rest to 0xFF (a little different from
-       provided solution that is worth checking) */
+    /* use bitmasks for possibly the leftmost and rightmost indices and set the rest to 0xFF
+       (a little different from provided solution that is worth checking) */
     public static void drawLine(byte[] screen, int width, int x1, int x2, int y) {
         int numBytesPerRow = width / BYTE_LENGTH;
         int height = screen.length / numBytesPerRow;
