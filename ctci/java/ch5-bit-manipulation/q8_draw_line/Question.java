@@ -33,7 +33,7 @@ public class Question {
 
     private static void fillPartial(byte[] screen, int index, int fromBit, int toBit) {
         if (fromBit == 0 && toBit == BYTE_LENGTH - 1) return;
-        int bitMask = ((1 << (BYTE_LENGTH - fromBit)) - 1) & (0xFF << BYTE_LENGTH - 1 - toBit);
+        int bitMask = (0xFF >>> fromBit) & (0xFF << BYTE_LENGTH - 1 - toBit);
         screen[index] |= bitMask;
     }
 
