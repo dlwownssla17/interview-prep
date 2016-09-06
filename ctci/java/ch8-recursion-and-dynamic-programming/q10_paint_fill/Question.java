@@ -4,7 +4,7 @@ package q10_paint_fill;
  * Created by jjlee on 9/6/16.
  */
 public class Question {
-
+    /* paint fill screen recursively */
     public static void paintFill(int[][] screen, int r, int c, int color) {
         if (outOfBounds(screen, r, c)) return;
         paintFillHelper(screen, r, c, color, screen[r][c]);
