@@ -13,7 +13,6 @@ public class Coordinate {
     }
 
     public boolean equals(Object other) {
-        if (!(other instanceof Coordinate)) return false;
-        return this.r == ((Coordinate) other).r && this.c == ((Coordinate) other).c;
+        return other instanceof Coordinate && this.r == ((Coordinate) other).r && this.c == ((Coordinate) other).c;
     }
 }

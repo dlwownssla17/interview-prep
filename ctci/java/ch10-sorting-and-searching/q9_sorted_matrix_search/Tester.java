@@ -26,7 +26,7 @@ public class Tester {
     public void testSortedMatrixSearch() throws Exception {
         assertEquals(sortedMatrixSearch(matrix, 0), new Coordinate(0,0));
         assertEquals(sortedMatrixSearch(matrix, 1), null);
-        assertEquals(sortedMatrixSearch(matrix, 5), new Coordinate(2,0));
+        assertEquals(sortedMatrixSearch(matrix, 5), new Coordinate(1,0));
         assertEquals(sortedMatrixSearch(matrix, 30), new Coordinate(0,3));
         assertEquals(sortedMatrixSearch(matrix, 12), new Coordinate(1,1));
         assertEquals(sortedMatrixSearch(matrix, 33), new Coordinate(2,2));
@@ -45,6 +45,31 @@ public class Tester {
         assertEquals(sortedMatrixSearch(matrix, 83), new Coordinate(3,7));
         assertEquals(sortedMatrixSearch(matrix, 74), new Coordinate(2,5));
         assertEquals(sortedMatrixSearch(matrix, 90), new Coordinate(4,7));
+    }
+
+    @Test
+    public void testSortedMatrixSearchBinary() throws Exception {
+        assertEquals(sortedMatrixSearchBinary(matrix, 0), new Coordinate(0,0));
+        assertEquals(sortedMatrixSearchBinary(matrix, 1), null);
+        assertEquals(sortedMatrixSearchBinary(matrix, 5), new Coordinate(1,0));
+        assertEquals(sortedMatrixSearchBinary(matrix, 30), new Coordinate(0,3));
+        assertEquals(sortedMatrixSearchBinary(matrix, 12), new Coordinate(1,1));
+        assertEquals(sortedMatrixSearchBinary(matrix, 33), new Coordinate(2,2));
+        assertEquals(sortedMatrixSearchBinary(matrix, 55), new Coordinate(2,4));
+        assertEquals(sortedMatrixSearchBinary(matrix, 71), new Coordinate(1,5));
+        assertEquals(sortedMatrixSearchBinary(matrix, 72), null);
+        assertEquals(sortedMatrixSearchBinary(matrix, 78), new Coordinate(1,7));
+        assertEquals(sortedMatrixSearchBinary(matrix, 90), new Coordinate(4,7));
+        assertEquals(sortedMatrixSearchBinary(matrix, 56), new Coordinate(3,4));
+        assertEquals(sortedMatrixSearchBinary(matrix, 46), new Coordinate(4,3));
+        assertEquals(sortedMatrixSearchBinary(matrix, 47), null);
+        assertEquals(sortedMatrixSearchBinary(matrix, 88), null);
+        assertEquals(sortedMatrixSearchBinary(matrix, 17), new Coordinate(3,1));
+        assertEquals(sortedMatrixSearchBinary(matrix, 77), new Coordinate(2,6));
+        assertEquals(sortedMatrixSearchBinary(matrix, 41), new Coordinate(3,2));
+        assertEquals(sortedMatrixSearchBinary(matrix, 83), new Coordinate(3,7));
+        assertEquals(sortedMatrixSearchBinary(matrix, 74), new Coordinate(2,5));
+        assertEquals(sortedMatrixSearchBinary(matrix, 90), new Coordinate(4,7));
     }
 
 }
